@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { getProducts, Product } from "../../app/api";
+import React, { useEffect } from "react";
+import { getProducts } from "../../app/api";
 import styles from "./Products.module.css";
 import { useAppSelector, useAppDispatch } from "../../app/hooks";
 import { receivedProducts } from "./productsSlice";
 
 export function Products() {
   const dispatch = useAppDispatch();
-  useEffect (() => {
+  useEffect(() => {
     getProducts().then((products) => {
       dispatch(receivedProducts(products));
     });
