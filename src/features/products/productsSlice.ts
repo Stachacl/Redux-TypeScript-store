@@ -14,6 +14,10 @@ const productsSlice = createSlice ({
     initialState,
     reducers: {
         receivedProducts(state, action: PayloadAction<Product[]>) {
+            const products = action.payload;
+            products.forEach(product => {
+                state.products[product.id] = product;
+            })
 
         }
     }
