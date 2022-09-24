@@ -28,9 +28,9 @@ export const { addToCart } = cartSlice.actions;
 export default cartSlice.reducer;
 
 export function getNumItems(state: RootState) {
-let numItems = 0;
-for (let id in state.cart.items) {
+  let numItems = 0;
+  for (let id in state.cart.items) {
     numItems += state.cart.items[id];
-}
-return numItems;
+  }
+  return numItems;
 }
