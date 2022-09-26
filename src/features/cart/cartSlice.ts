@@ -16,12 +16,15 @@ const cartSlice = createSlice({
   reducers: {
     addToCart(state, action: PayloadAction<string>) {
       const id = action.payload;
-      if (state.items[id]) {
-        state.items[id]++;
+      if (state.items[action.payload]) {
+        state.items[action.payload]++;
       } else {
-        state.items[id] = 1;
+        state.items[action.payload] = 1;
       }
     },
+    removeFromCart(state, action: PayloadAction<string>) {
+      delete state.items[action.payload];
+    }
   },
 });
 
