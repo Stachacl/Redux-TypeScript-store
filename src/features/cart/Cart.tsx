@@ -32,18 +32,6 @@ export function Cart() {
             </td>
           </tr>
           ))}
-          <tr>
-            <td>Football Cleats</td>
-            <td>
-              <input type="text" className={styles.input} defaultValue={17} />
-            </td>
-            <td>$25.99</td>
-            <td>
-              <button aria-label="Remove Football Cleats from Shopping Cart">
-                X
-              </button>
-            </td>
-          </tr>
         </tbody>
         <tfoot>
           <tr>
