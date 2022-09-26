@@ -22,7 +22,7 @@ export function Cart() {
           <tr>
             <td>{products[id].name}</td>
             <td>
-              <input type="text" className={styles.input} defaultValue={21} />
+              <input type="text" className={styles.input} defaultValue={quantity} />
             </td>
             <td>{products[id].price}</td>
             <td>
