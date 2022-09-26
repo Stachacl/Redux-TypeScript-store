@@ -18,6 +18,9 @@ export function Cart() {
           </tr>
         </thead>
         <tbody>
+          {Object.entries(items).map(([id,  quantity]) => {
+            
+          })}
           <tr>
             <td>Magnifying Glass</td>
             <td>
