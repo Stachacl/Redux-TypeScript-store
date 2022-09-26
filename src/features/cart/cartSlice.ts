@@ -1,5 +1,6 @@
 import { createSlice, createSelector, PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "../../app/store";
+import { Products } from "../products/Products";
 
 export interface CartState {
   items: { [productID: string]: number };
@@ -44,5 +45,17 @@ export const getMemoizedNumItems = createSelector(
       numItems += items[id];
 
     }
+  }
+)
+
+export const getTotalPrice = createSelector(
+  (state: RootState) => state.cart.items,
+  (state: RootState) => state.products.products,
+  (items, products) => {
+    let total =0;
+    for (let id in items) {
+      total += products[id].price * items[id];
+    }
+    return total.toFixed(2)
   }
 )
