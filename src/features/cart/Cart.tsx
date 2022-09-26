@@ -18,21 +18,20 @@ export function Cart() {
           </tr>
         </thead>
         <tbody>
-          {Object.entries(items).map(([id,  quantity]) => {
-            
-          })}
+          {Object.entries(items).map(([id,  quantity]) => (
           <tr>
-            <td>Magnifying Glass</td>
+            <td>{products[id].name}</td>
             <td>
               <input type="text" className={styles.input} defaultValue={21} />
             </td>
-            <td>$44.44</td>
+            <td>{products[id].price}</td>
             <td>
-              <button aria-label="Remove Magnifying Glass from Shopping Cart">
+              <button aria-label={ `Remove ${products[id].name} from Shopping cart`}>
                 X
               </button>
             </td>
           </tr>
+          ))}
           <tr>
             <td>Football Cleats</td>
             <td>
