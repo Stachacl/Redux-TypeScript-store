@@ -1,7 +1,10 @@
 import React from "react";
 import styles from "./Cart.module.css";
+import { useAppSelector } from "../../app/hooks";
 
 export function Cart() {
+  const products = useAppSelector(state => state.products.products);
+  const items = useAppSelector((state) => state.cart.items);
   return (
     <main className="page">
       <h1>Shopping Cart</h1>
